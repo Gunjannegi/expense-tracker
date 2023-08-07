@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import classes from './SignUp.module.css';
 const SignUp = () => {
-
+    const [signup, setSignup] = useState(false);
     const [enteredEmail, setEnteredEmail] = useState('');
     const [eneteredPassword, setEnteredPassword] = useState('');
     const [enteredConfirmPassword, setEnteredConfirmPassword] = useState('');
@@ -40,6 +40,7 @@ const SignUp = () => {
 
                 const data = await response.json();
                 console.log('successfully signed up', data)
+                setSignup(true);
             } catch (error) {
                 console.error('signup failed', error.message)
             }
@@ -47,6 +48,7 @@ const SignUp = () => {
         }
     };
     return (
+        <>
         <div className={classes.container}>
             <div className={classes.title}>Sign Up</div>
             <form onSubmit={submitHandler}>
@@ -54,8 +56,10 @@ const SignUp = () => {
                 <input type='password' onChange={passwordChangeHandler} placeholder="Password" required></input>
                 <input type='password' onChange={confirmPasswordHandler} placeholder="Confirm Password" required></input><br/>
                 <button>Sign Up</button>
-        </form>
+            </form>
         </div>
+            {signup && <p>Your Account has been successfully signed up!!</p>}
+        </>
     )
 };
 export default SignUp;
