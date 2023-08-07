@@ -1,0 +1,19 @@
+
+.message{
+	font-style:italic;
+	padding:10px 0px 20px 10px;
+	border:hidden;
+	border-bottom:1px solid #ccc;
+	
+
+}
+
+.second{
+	border-radius:8px;
+	border:hidden;
+	width:fit-content;
+	margin-left:1000px;
+	background-color:plum;
+	padding:2px 3px 2px 3px;
+}
+

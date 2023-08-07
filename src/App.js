@@ -3,6 +3,7 @@ import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import MainHeader from "./Components/MainHeader";
 import Welcome from './pages/Welcome';
+import Profile from './pages/Profile';
 function App() {
     return (
         <div>
@@ -19,6 +20,9 @@ function App() {
                 </Route>
                 <Route path='/welcome'>
                     <Welcome />
+                </Route>
+                <Route path='/profile'>
+                    <Profile/>
                 </Route>
             </div>
         </div>
