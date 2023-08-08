@@ -15,26 +15,29 @@ const SignUp = () => {
     };
 
     const confirmPasswordHandler = (event) => {
-        setEnteredConfirmPassword(event.target.change)
+        setEnteredConfirmPassword(event.target.value)
     }
 
     const submitHandler = async (event) => {
         event.preventDefault();
-        const UserSignUpDetail = {
-            email: enteredEmail,
-            password: eneteredPassword
-        }
+        console.log('a')
         if (eneteredPassword === enteredConfirmPassword) {
+            console.log('a')
             try {
+               
                 const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDd1F060eXCWEN4kDI0quEanYFlhyDNkPo', {
                     method: 'POST',
-                    body: JSON.stringify(UserSignUpDetail),
+                    body: JSON.stringify({
+                        email: enteredEmail,
+                        password: eneteredPassword,
+                        returnSecureToken:true
+                    }),
                     headers: {
                         'Content-Type': 'application/json'
                     }
                 })
                 if (!response.ok) {
-                    const errorData = response.json();
+                    const errorData = await response.json();
                     throw new Error(errorData.message || 'Something went wrong')
                 }
 
