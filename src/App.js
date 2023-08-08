@@ -6,6 +6,7 @@ import Welcome from './pages/Welcome';
 import Profile from './pages/Profile';
 import { useContext } from 'react';
 import AuthContext from './store/auth-context';
+import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 function App() {
     const authCntxt = useContext(AuthContext)
     return (
@@ -27,6 +28,9 @@ function App() {
                 </Route>
                 <Route path='/profile'>
                     <Profile/>
+                </Route>
+                <Route path='/password'>
+                    <ForgotPassword/>
                 </Route>
             </div>
         </div>

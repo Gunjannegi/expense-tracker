@@ -1,7 +1,7 @@
 import { useContext, useRef, useState } from "react"
 import AuthContext from "../store/auth-context";
 import classes from './Login.module.css';
-import { useHistory } from 'react-router-dom';
+import { useHistory, NavLink } from 'react-router-dom';
 const Login = () => {
    const history = useHistory()
     const [login, setLogin] = useState(false);
@@ -55,7 +55,10 @@ const Login = () => {
             <div className={classes.title}>Login</div>
             <form onSubmit={submitHandler}>
                 <input type='email' ref={emailInputRef} placeholder="Email" required></input>
-                <input type='password' ref={passwordInputRef} placeholder="Password" required></input>
+                    <input type='password' ref={passwordInputRef} placeholder="Password" required></input>
+                    <div className={classes.forgotpassword}>
+                        <NavLink to='/password' >Forgot password?</NavLink>
+                    </div>
                 <button className={classes.button}>Login</button>
             </form>
         </div>
