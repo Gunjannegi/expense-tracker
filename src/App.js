@@ -4,13 +4,17 @@ import Login from "./pages/Login";
 import MainHeader from "./Components/MainHeader";
 import Welcome from './pages/Welcome';
 import Profile from './pages/Profile';
+import { useContext } from 'react';
+import AuthContext from './store/auth-context';
 function App() {
+    const authCntxt = useContext(AuthContext)
     return (
         <div>
             <MainHeader />
             <div>
                 <Route path='/' exact>
-                    <Redirect to='/signup' />
+                    {authCntxt.isLoggedIn && <Redirect to='/welcome' />}
+                    {!authCntxt.isLoggedIn && <Redirect to='/signup'/>}
                 </Route>
                 <Route path='/signup'>
                     <SignUp />
