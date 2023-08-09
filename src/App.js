@@ -1,12 +1,13 @@
 import { Route, Redirect } from 'react-router-dom';
-import SignUp from "./pages/SignUp";
-import Login from "./pages/Login";
+import SignUp from "./pages/SignUp/SignUp";
+import Login from "./pages/Login/Login";
 import MainHeader from "./Components/MainHeader";
-import Welcome from './pages/Welcome';
-import Profile from './pages/Profile';
+import Welcome from './pages/Welcome/Welcome';
+import Profile from './pages/Profile/Profile';
 import { useContext } from 'react';
 import AuthContext from './store/auth-context';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
+import ExpenseList from './pages/ExpenseTracker/ExpenseList';
 function App() {
     const authCntxt = useContext(AuthContext)
     return (
@@ -23,7 +24,7 @@ function App() {
                 <Route path='/login' exact>
                     <Login />
                 </Route>
-                <Route path='/welcome'>
+                <Route path='/welcome' exact>
                     <Welcome />
                 </Route>
                 <Route path='/profile'>
@@ -31,6 +32,9 @@ function App() {
                 </Route>
                 <Route path='/password'>
                     <ForgotPassword/>
+                </Route>
+                <Route path='/expenselist'>
+                    <ExpenseList />
                 </Route>
             </div>
         </div>

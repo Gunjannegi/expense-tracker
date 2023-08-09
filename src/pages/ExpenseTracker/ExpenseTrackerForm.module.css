@@ -1,0 +1,23 @@
+.container {
+    border-radius: 4px;
+    margin: 50px 600px 100px 200px;
+    width: 70%;
+    padding: 20px;
+    background-color:powderblue;
+    border-radius:12px;
+    border-width:5px;
+}
+.label {
+    color: dodgerblue;
+    font-weight: bold;
+    font-style: inherit;
+    font-size: 20px
+}
+.input{
+    padding:5px;
+    border:none;
+}
+.button{
+    width:20%;
+    background-color:dodgerblue
+}

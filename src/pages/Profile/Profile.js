@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import AuthContext from '../store/auth-context';
+import AuthContext from '../../store/auth-context';
 import classes from './Profile.module.css';
 const Profile = () => {
     const [enteredName, setEnteredName] = useState('');

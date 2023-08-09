@@ -1,6 +1,7 @@
 import classes from './Welcome.module.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 const Welcome = () => {
+    const history = useHistory();
     const verifyingEmailHandler = async() => {
         try {
             const response = await fetch('https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyDd1F060eXCWEN4kDI0quEanYFlhyDNkPo', {
@@ -25,6 +26,9 @@ const Welcome = () => {
             console.log('failed', error.message)
         }
     }
+    const trackOfExpenses = () => {
+        history.push('/expenselist')
+    }
     return (
         <>
         <div className={classes.message}>
@@ -35,6 +39,10 @@ const Welcome = () => {
             <div className={classes.container}>
                 <span>Please verify your email :</span>
                 <button className={classes.button} onClick={verifyingEmailHandler}>Verify Email</button>
+            </div>
+            <div>
+                <div className={classes.title}>Track your day-to-day expenses</div>
+                <button className={classes.trackButton} onClick={trackOfExpenses}>Expense Tracker</button>
             </div>
         </>
     )

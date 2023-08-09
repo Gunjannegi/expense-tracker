@@ -1,7 +1,7 @@
 import { useContext, useRef, useState } from "react"
-import AuthContext from "../store/auth-context";
 import classes from './Login.module.css';
 import { useHistory, NavLink } from 'react-router-dom';
+import AuthContext from "../../store/auth-context";
 const Login = () => {
    const history = useHistory()
     const [login, setLogin] = useState(false);

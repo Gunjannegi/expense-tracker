@@ -1,0 +1,19 @@
+.container {
+    border-radius: 4px;
+    margin: 0px 600px 200px 200px;
+    width: 70%;
+    padding: 20px;
+    background-color: powderblue;
+    border-radius: 12px;
+    border-width: 5px;
+}
+.span1 {
+    text-align:left
+}
+ .span2{
+     text-align:center;
+ }   
+ .span3{
+     text-align:right;
+
+ }

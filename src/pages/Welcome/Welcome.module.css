@@ -27,5 +27,21 @@
 	padding: 20px;
 	border: hidden;
 	font-size: 20px;
+	border-bottom: 1px solid #ccc;
+}
+.title{
+	text-align:center;
+	font-weight:bold;
+	font-size:40px
+}
+.trackButton {
+	margin-top: 30px;
+	width: 300px;
+	margin-left: 600px;
+	font-weight: bold;
+	background: radial-gradient(circle at center, cyan, rgb(77, 136, 212), blue),100%;
+}
+trackButton:active {
+	background-color:blue;
 }
 
