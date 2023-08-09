@@ -35,6 +35,7 @@ const Login = () => {
                 const data = await response.json();
                 console.log('successfully loggedIn', data)
                 authCntxt.login(data.idToken)
+                localStorage.setItem('email', enteredEmail)
                 setLogin(true);
 
             } catch (error) {

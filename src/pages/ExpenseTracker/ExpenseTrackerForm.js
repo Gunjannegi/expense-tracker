@@ -13,7 +13,7 @@ const ExpenseTrackerForm = (props) => {
     const categoryChangeHandler = (event) => {
         setEnteredCategory(event.target.value);
     };
-    const submitHandler = (event) => {
+    const submitHandler = async(event) => {
         event.preventDefault();
         const expenseDetail = {
             price: eneteredPrice,
@@ -21,7 +21,35 @@ const ExpenseTrackerForm = (props) => {
             category: enteredCategory
         }
         props.addExpense(expenseDetail);
+        setEnteredPrice('');
+        setEnteredCategory('');
+        setEnteredDescription('');
+
+        try {
+            const email = (localStorage.getItem('email')).replace(/[^\w\s]/gi, '').trim();
+            console.log(email)
+            const response = await fetch(`https://expensetracker-69456-default-rtdb.firebaseio.com/expenses${email}.json`, {
+                method: 'POST',
+                body: JSON.stringify({
+                    price: eneteredPrice,
+                    description: enteredDescription,
+                    category: enteredCategory
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }); if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error('Something went wrong', errorData);
+            }
+            const data = await response.json();
+            console.log('successfully added', data)
+        } catch (error) {
+            console.log('failed', error.message)
+        }
+
     }
+
     return (
 
         <div className={classes.container}>
