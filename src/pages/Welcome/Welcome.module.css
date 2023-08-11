@@ -1,11 +1,9 @@
 
-.message{
-	font-style:italic;
-	padding:10px 0px 20px 10px;
-	border:hidden;
-	border-bottom:1px solid #ccc;
-	
-
+.message {
+	font-style: italic;
+	padding: 10px 0px 20px 10px;
+	border: hidden;
+	border-bottom: 1px solid #00008b;
 }
 
 .second{
@@ -27,7 +25,7 @@
 	padding: 20px;
 	border: hidden;
 	font-size: 20px;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #00008b;
 }
 .title{
 	text-align:center;
@@ -39,7 +37,7 @@
 	width: 300px;
 	margin-left: 600px;
 	font-weight: bold;
-	background: radial-gradient(circle at center, cyan, rgb(77, 136, 212), blue),100%;
+	background-color:darkblue;
 }
 trackButton:active {
 	background-color:blue;

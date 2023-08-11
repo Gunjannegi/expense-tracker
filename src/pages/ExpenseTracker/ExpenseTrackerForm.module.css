@@ -1,23 +1,29 @@
 .container {
     border-radius: 4px;
-    margin: 50px 600px 100px 200px;
-    width: 70%;
+    margin: 50px 100px 100px 50px;
+    width: 40%;
     padding: 20px;
-    background-color:powderblue;
+    background-color:darkblue;
     border-radius:12px;
-    border-width:5px;
+   
 }
 .label {
-    color: dodgerblue;
-    font-weight: bold;
+    color:aquamarine;
     font-style: inherit;
-    font-size: 20px
+    font-size: 20px;
+    margin:20px;
+    font-size:20px
 }
 .input{
     padding:5px;
     border:none;
+    
 }
 .button{
-    width:20%;
-    background-color:dodgerblue
+    width:40%;
+    background-color:aquamarine;
+    margin-left:140px;
+    color:darkblue;
+    margin-top:20px;
+        
 }

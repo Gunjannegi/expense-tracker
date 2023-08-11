@@ -1,19 +1,36 @@
 .container {
-    border-radius: 4px;
-    margin: 0px 600px 200px 200px;
+     margin-right:50px;
+    margin-top:40px;
     width: 70%;
     padding: 20px;
-    background-color: powderblue;
+    background-color:darkblue;
     border-radius: 12px;
     border-width: 5px;
 }
 .span1 {
-    text-align:left
+    
+   
 }
  .span2{
-     text-align:center;
- }   
- .span3{
-     text-align:right;
-
+    
  }
+.span3 {
+    
+}
+.button {
+    width: 60%;
+    background-color: darkblue;
+   
+}
+.background{
+    
+    margin:0px;
+}
+.body{
+    display:inline-flex;
+}
+li {
+   list-style-type:none;
+    border: hidden;
+    border-bottom: 1px solid #00008B;
+}

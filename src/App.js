@@ -16,7 +16,7 @@ function App() {
             <div>
                 <Route path='/' exact>
                     {authCntxt.isLoggedIn && <Redirect to='/welcome' />}
-                    {!authCntxt.isLoggedIn && <Redirect to='/signup'/>}
+                    {!authCntxt.isLoggedIn && <Redirect to='/signup' />}
                 </Route>
                 <Route path='/signup'>
                     <SignUp />
@@ -28,10 +28,10 @@ function App() {
                     <Welcome />
                 </Route>
                 <Route path='/profile'>
-                    <Profile/>
+                    <Profile />
                 </Route>
                 <Route path='/password'>
-                    <ForgotPassword/>
+                    <ForgotPassword />
                 </Route>
                 <Route path='/expenselist'>
                     <ExpenseList />
