@@ -3,7 +3,7 @@
     margin-top:40px;
     width: 70%;
     padding: 20px;
-    background-color:darkblue;
+    background-color:gray;
     border-radius: 12px;
     border-width: 5px;
 }
@@ -18,7 +18,7 @@
     
 }
 .button {
-    width: 60%;
+    width: 70%;
     background-color: darkblue;
    
 }
@@ -33,4 +33,14 @@ li {
    list-style-type:none;
     border: hidden;
     border-bottom: 1px solid #00008B;
+}
+.inline{
+    display:inline-flex;
+}
+tr:nth-child(even) {
+    background-color: rgba(150, 212, 212, 0.4);
+}
+
+th:nth-child(even), td:nth-child(even) {
+    background-color: deepskyblue;
 }

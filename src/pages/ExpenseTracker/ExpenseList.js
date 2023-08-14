@@ -1,16 +1,20 @@
-import { useContext, useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import ExpenseTrackerForm from "./ExpenseTrackerForm";
 import classes from './ExpenseList.module.css';
-import AuthContext from '../../store/auth-context';
+//import AuthContext from '../../store/auth-context';
 import ExpenseHeader from './ExpenseHeader';
+import { useDispatch, useSelector } from 'react-redux';
+import { expensesActions } from '../../store/expenses';
 
 const ExpenseList = () => {
-    const authCntxt = useContext(AuthContext);
+    // const authCntxt = useContext(AuthContext);
+    const isAuth = useSelector(state => state.auth.isAuthenticated)
     const [expenseList, setExpenseList] = useState([]);
-    console.log(expenseList)
     const childRef = useRef()
-
-
+    const dispatch = useDispatch();
+    console.log(expenseList)
+    dispatch(expensesActions.itemList(expenseList))
+    dispatch(expensesActions.totalExpenses(expenseList))
     const addingExpenses = (expense) => {
         setExpenseList((prevExpenses) => {
             return ([...prevExpenses, expense])
@@ -50,6 +54,7 @@ const ExpenseList = () => {
         }
     }
     const showOnScreen = async () => {
+        console.log('a')
         const email = (localStorage.getItem('email')).replace(/[^\w\s]/gi, '').trim();
         console.log(email)
         try {
@@ -75,10 +80,10 @@ const ExpenseList = () => {
         }
     }
     useEffect(() => {
-        if (authCntxt.isLoggedIn) {
+        if (isAuth) {
             showOnScreen()
         }
-    }, [authCntxt.isLoggedIn])
+    }, [isAuth])
 
     const deletingExpense = async (id) => {
         const updatedList = expenseList.filter((expense) => (
@@ -124,11 +129,12 @@ const ExpenseList = () => {
     return (
         <>
             <ExpenseHeader />
+            <div className={classes.inline}>
             <ExpenseTrackerForm addExpense={addingExpenses} ref={childRef} updateExpense={updatingExpenses} />
             <div className={classes.container}>
-                <table className='table table-hover table-borderless table-dark'>
-                    <thead>
-                        <tr>
+                <table className='table table-hover'>
+                        <thead className="thead-dark">
+                            <tr>
                             <th scope='col'>#</th>
                             <th scope='col'>Price</th>
                             <th scope='col'>Description</th>
@@ -147,13 +153,14 @@ const ExpenseList = () => {
                                 <td>
                                     <button className={classes.button} onClick={() => editingExpense(expense)}>Edit</button></td>
                                 <td>
-                                    <button onClick={() => deletingExpense(expense.id)}>Delete</button>
+                                    <button className={classes.button} onClick={() => deletingExpense(expense.id)}>Delete</button>
                                 </td>
 
                             </tr>
                         ))}
                     </tbody>
                 </table>
+                </div>
             </div>
         </>
     )

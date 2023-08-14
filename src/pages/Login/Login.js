@@ -1,13 +1,16 @@
-import { useContext, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import classes from './Login.module.css';
 import { useHistory, NavLink } from 'react-router-dom';
-import AuthContext from "../../store/auth-context";
+//import AuthContext from "../../store/auth-context";
+import { useDispatch } from 'react-redux';
+import { authActions } from "../../store/auth";
 const Login = () => {
    const history = useHistory()
     const [login, setLogin] = useState(false);
     const emailInputRef = useRef();
     const passwordInputRef = useRef();
-    const authCntxt = useContext(AuthContext);
+    //const authCntxt = useContext(AuthContext);
+    const dispatch = useDispatch();
     const submitHandler = async(event) => {
         event.preventDefault();
         const enteredEmail = emailInputRef.current.value;
@@ -34,8 +37,10 @@ const Login = () => {
                 }
                 const data = await response.json();
                 console.log('successfully loggedIn', data)
-                authCntxt.login(data.idToken)
+                dispatch(authActions.login(data.idToken));
+                //authCntxt.login(data.idToken)
                 localStorage.setItem('email', enteredEmail)
+                localStorage.setItem('token', data.idToken)
                 setLogin(true);
 
             } catch (error) {

@@ -34,13 +34,12 @@ const Welcome = () => {
         <div className={classes.message}>
             <span>Welcome to Expense Tracker!!!</span>
             <span className={classes.second}>Your profile is incompleted.
-                <NavLink to='/profile'> Complete now</NavLink></span>
+                    <NavLink to='/profile'> Complete now</NavLink></span>
+                <div className={classes.message2}>Please verify your email :
+                    <button className={classes.button} onClick={verifyingEmailHandler}>Verify Email</button>
+                </div>
             </div>
-            <div className={classes.container}>
-                <span>Please verify your email :</span>
-                <button className={classes.button} onClick={verifyingEmailHandler}>Verify Email</button>
-            </div>
-            <div>
+            <div className={classes.containersecond}>
                 <div className={classes.title}>Track your day-to-day expenses</div>
                 <button className={classes.trackButton} onClick={trackOfExpenses}>Expense Tracker</button>
             </div>

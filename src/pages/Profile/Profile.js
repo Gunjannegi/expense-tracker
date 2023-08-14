@@ -1,10 +1,13 @@
-import { useContext, useEffect, useState } from 'react';
-import AuthContext from '../../store/auth-context';
+import { useEffect, useState } from 'react';
+//import AuthContext from '../../store/auth-context';
 import classes from './Profile.module.css';
+import { useSelector } from 'react-redux';
 const Profile = () => {
     const [enteredName, setEnteredName] = useState('');
     const [enteredUrl, setEnteredUrl] = useState('');
-    const authCntxt = useContext(AuthContext);
+    //const authCntxt = useContext(AuthContext);
+    const isAuth = useSelector(state => state.auth.isAuthenticated)
+    console.log(isAuth)
     const nameChangeHandler = (event) => {
         setEnteredName(event.target.value);
     };
@@ -39,10 +42,10 @@ const Profile = () => {
         
     };
     useEffect(() => {
-        if (authCntxt.isLoggedIn) {
+        if (isAuth) {
             previousDataFilling()
         }
-    }, [authCntxt.isLoggedIn])
+    }, [isAuth])
     const submitHandler = async(event) => {
         event.preventDefault();
        try {
