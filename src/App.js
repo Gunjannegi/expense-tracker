@@ -9,13 +9,21 @@ import Profile from './pages/Profile/Profile';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import ExpenseList from './pages/ExpenseTracker/ExpenseList';
 import { useSelector } from 'react-redux';
+import background from './expenseTrackerImg2.png';
+import background2 from './backgroundImg2.png';
 function App() {
     //const authCntxt = useContext(AuthContext)
     const isAuth = useSelector(state => state.auth.isAuthenticated)
+    const theme = useSelector(state => state.theme.theme)
+      
     return (
-        <div>
+        <div style={{
+            backgroundImage: theme === 'light' ? `url(${background})` : `url(${background2})`,
+            height:'800px'
+            
+        }}>
             <MainHeader />
-            <div>
+            <div >
                 <Route path='/' exact>
                     {isAuth && <Redirect to='/welcome' />}
                     {!isAuth && <Redirect to='/signup' />}
@@ -40,7 +48,7 @@ function App() {
                 </Route>
             </div>
         </div>
-    );
+    )
 }
 
 export default App;

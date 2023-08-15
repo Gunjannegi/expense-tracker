@@ -57,8 +57,8 @@ const SignUp = () => {
             <form onSubmit={submitHandler}>
                 <input type='email' onChange={emailChangeHandler} placeholder="Email" required></input>
                 <input type='password' onChange={passwordChangeHandler} placeholder="Password" required></input>
-                <input type='password' onChange={confirmPasswordHandler} placeholder="Confirm Password" required></input><br/>
-                <button>Sign Up</button>
+                    <input type='password' onChange={confirmPasswordHandler} placeholder="Confirm Password" required></input><br />
+                    <button className={classes.button}>Sign Up</button>
             </form>
         </div>
             {signup && <p>Your Account has been successfully signed up!!</p>}

@@ -40,7 +40,7 @@
 	background-color:darkblue;
 	margin-left:230px
 }
-trackButton:active {
+.trackButton:active {
 	background-color:blue;
 }
 .containersecond{
@@ -51,7 +51,7 @@ trackButton:active {
 	margin-top:200px;
 	background-color:white;
 }
-body{
+/*body{
 	background-image: url('expenseTrackerImg2.png');
     background-position: center;
-}
+}*/

@@ -16,3 +16,12 @@
     font-size:50px;
     font-family:Cambria;
 }
+.premium{
+    padding-left:830px;
+    
+}
+    .premium button {
+        width: 120%;
+        background-color:darkblue;
+        color:white
+    }

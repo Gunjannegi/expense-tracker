@@ -1,0 +1,28 @@
+.inline{
+    display:inline-flex;
+   
+}
+.buttonlight {
+    background-color: #ffffff;
+    color: black;
+    width:fit-content;
+    margin-right: 10px;
+    margin-left:10px;
+    font-size: 15px;
+}
+.buttondark {
+    color: white;
+    width: fit-content;
+    margin-right: 10px;
+    font-size: 15px;
+    background-color: black;
+    margin-left: 10px;
+}
+.theme{
+    
+}
+.buttodownload {
+    font-size: 5px;
+    background-color:black;
+    color:white;
+}

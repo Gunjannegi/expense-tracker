@@ -13,6 +13,8 @@ const MainHeader = () => {
         dispatch(authActions.logout());
         localStorage.removeItem('token');
         localStorage.removeItem('email');
+        localStorage.removeItem('premium');
+        localStorage.removeItem('stateOfPremiumButton');
     }
     return (
         <header>

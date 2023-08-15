@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialExpensesState = { items: [], totalValue: 0, showPremiumButton: false }
+const initialExpensesState = {
+	items: [],
+	totalValue: 0,
+	showPremiumButton: false,
+	
+}
 
 const expenseSlice = createSlice({
 	name: 'expenses',
@@ -14,10 +19,17 @@ const expenseSlice = createSlice({
 			state.items.forEach(item => {
 				totalExpense = totalExpense + Number(item.price)
 			})
-			if (totalExpense > 10000) {
+
+			if (totalExpense >= 10000 && localStorage.getItem('stateOfPremiumButton') === null) {
 				state.showPremiumButton = true;
 			}
+			
+		},
+		show(state) {
+			state.showPremiumButton = false;
+			
 		}
+		
 	}
 })
 

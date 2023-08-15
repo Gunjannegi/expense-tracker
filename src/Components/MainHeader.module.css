@@ -3,3 +3,11 @@
     color:white;
     padding-left:20px;
 }
+.premium {
+    padding-left: 830px;
+}
+
+    .premium button {
+        width: 120%;
+        color: white
+    }

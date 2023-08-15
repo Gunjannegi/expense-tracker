@@ -21,7 +21,7 @@ input {
    
 }
 
-button {
+.button {
     background-color: darkturquoise;
     border-radius: 15px;
     width: 100%;
@@ -31,7 +31,7 @@ button {
     margin-bottom: 15px;
     
 }
-    button:active {
+    .button:active {
         background-color: mediumblue;
     }
 

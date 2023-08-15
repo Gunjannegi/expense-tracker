@@ -17,7 +17,7 @@ input{
     padding:10px;
     
 }
-button{
+.button{
     background-color:darkturquoise;
     font-size:20px;
     border-radius:15px;
@@ -28,6 +28,6 @@ button{
     margin-top:10px;
     margin-bottom:15px
 }
-button:active{
+.button:active{
     background-color:mediumblue;
 }
