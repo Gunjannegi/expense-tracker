@@ -45,7 +45,9 @@ const ForgotPassword = () => {
             </div>
             <div className={classes.title}>
                 Already a user?
-                <NavLink to='/login'>Login</NavLink>
+                
+                    <NavLink to='/login'>Login</NavLink>
+                    
             </div>
         </div>
     )

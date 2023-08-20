@@ -2,12 +2,7 @@
     text-decoration:none;
     color:white;
     padding-left:20px;
-}
-.premium {
-    padding-left: 830px;
-}
+    border:hidden;
+    width:fit-content;
 
-    .premium button {
-        width: 120%;
-        color: white
-    }
+}

@@ -7,7 +7,6 @@ const Profile = () => {
     const [enteredUrl, setEnteredUrl] = useState('');
     //const authCntxt = useContext(AuthContext);
     const isAuth = useSelector(state => state.auth.isAuthenticated)
-    console.log(isAuth)
     const nameChangeHandler = (event) => {
         setEnteredName(event.target.value);
     };
@@ -79,9 +78,9 @@ const Profile = () => {
             <div className={classes.title}>Contact Details</div>
             <form onSubmit={submitHandler}>
                 <label className={classes.label}>Full Name :</label>
-                <input type='text' onChange={nameChangeHandler} value={enteredName}></input>
+                <input type='text' onChange={nameChangeHandler} value={enteredName} required></input>
                 <label className={classes.label}>Profile Photo URL :</label>
-                <input type='url' onChange={urlChangeHandler} value={enteredUrl}></input>
+                <input type='url' onChange={urlChangeHandler} value={enteredUrl} required></input>
                 <button className={classes.button}>Update</button>
             </form>
         </div>

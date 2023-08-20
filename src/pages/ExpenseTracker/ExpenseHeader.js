@@ -22,8 +22,8 @@ const ExpenseHeader = () => {
             </Navbar>
                 <Navbar className={classes.header}>
                 <h1 className={classes.tagline2}>Track Your Expenses</h1>
-                <span className={classes.premium}>
-                    {show && < button onClick={themeChangeHandler}> Activate Premium</button>}
+                <span>
+                    {show && < button className={classes.button} onClick={themeChangeHandler}> Activate Premium</button>}
                     {premium && <ToggleTheme/>}
                 </span>
             </Navbar>

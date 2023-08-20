@@ -34,7 +34,7 @@ const Welcome = () => {
         <div className={classes.message}>
             <span>Welcome to Expense Tracker!!!</span>
             <span className={classes.second}>Your profile is incompleted.
-                    <NavLink to='/profile'> Complete now</NavLink></span>
+                    <NavLink to='/profile'>Complete now</NavLink></span>
                 <div className={classes.message2}>Please verify your email :
                     <button className={classes.button} onClick={verifyingEmailHandler}>Verify Email</button>
                 </div>

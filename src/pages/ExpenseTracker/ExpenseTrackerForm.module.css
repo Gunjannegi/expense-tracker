@@ -27,4 +27,7 @@
     color:darkblue;
     margin-top:20px;
      font-weight:bold;   
+     border:none;
+     border-radius:1rem;
+     font-size:1.3rem;
 }

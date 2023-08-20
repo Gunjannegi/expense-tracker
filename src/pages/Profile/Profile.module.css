@@ -1,16 +1,29 @@
 .container{
     border:hidden;
     border-bottom: 1px solid #ccc;
-    margin: 100px;
+    margin: 10rem;
+    background-color:bisque;
+    width:fit-content;
+    padding:2rem;
 }
 .button{
 width:fit-content;
-padding:5px
+padding:5px;
+border-radius:1rem;
+border:none;
+background-color:white;
+color:black;
+font-weight:bold;
 }
+    .button:hover {
+        background-color: sandybrown;
+        color:white;
+    }
 
 .title {
     font-weight:bold;
-    font-size:20px
+    font-size:20px;
+    padding-bottom:2rem;
 }
 .label{
     font-weight:bold;

@@ -10,37 +10,49 @@
 }
 
 .second {
-	border-radius: 8px;
+	border-radius: 4rem;
 	border: hidden;
 	width: fit-content;
-	margin-left: 950px;
+	margin-left: 57rem;
 	background-color: plum;
-	padding: 2px 3px 2px 3px;
+	padding: 0.5rem 1rem 0.5rem 1rem;
 
 }
 .button {
 	width: fit-content;
 	padding: 5px;
-	margin-left:10px;
-	font-size:15px;
+	margin-left:0.5rem;
+	font-size:0.8rem;
 	background-color:red;
+	color:white;
+	font-weight:bold;
+    border-radius:2rem;
+	border:none;
+}
+.button:hover{
+	background-color:firebrick;
 }
 .message2 {
-	padding-left: 1200px;
+	padding-left: 74rem;
+	margin:1rem;
 }
 .title{
 	text-align:center;
 	font-weight:bold;
-	font-size:40px
+	font-size:3rem;
 }
 .trackButton {
-	margin-top: 30px;
-	width: 300px;
+	margin: 2rem 2rem 2rem 15rem;
+	width: 15rem;
 	font-weight: bold;
 	background-color:darkblue;
-	margin-left:230px
+	border-radius:4rem;
+	color:white;
+	font-size:1.3rem;
+	padding:0.6rem;
+	
 }
-.trackButton:active {
+.trackButton:hover {
 	background-color:blue;
 }
 .containersecond{
@@ -51,7 +63,3 @@
 	margin-top:200px;
 	background-color:white;
 }
-/*body{
-	background-image: url('expenseTrackerImg2.png');
-    background-position: center;
-}*/

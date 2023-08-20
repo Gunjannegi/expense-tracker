@@ -7,20 +7,16 @@
     border-radius: 12px;
     border-width: 5px;
 }
-.span1 {
-    
-   
-}
- .span2{
-    
- }
-.span3 {
-    
-}
+
 .button {
     width: 70%;
     background-color: darkblue;
+    color:white;
+    border-radius:1rem
    
+}
+.button:hover{
+    background-color:deepskyblue;
 }
 .background{
     

@@ -31,3 +31,6 @@ input{
 .button:active{
     background-color:mediumblue;
 }
+.button:hover{
+    background-color:darkblue;
+}

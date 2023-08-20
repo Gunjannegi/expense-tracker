@@ -25,3 +25,15 @@
         background-color:darkblue;
         color:white
     }
+    .button{
+        border-radius:1rem;
+        background-color:black;
+        color:greenyellow;
+        font-size:1.3rem;
+        padding:0.5rem;
+        margin-left:53rem;
+    }
+    .button:hover{
+        background-color:lawngreen;
+        color:black;
+    }

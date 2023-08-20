@@ -6,7 +6,6 @@ const ExpenseTrackerForm = forwardRef((props, ref) => {
     const [enteredDescription, setEnteredDescription] = useState('');
     const [enteredCategory, setEnteredCategory] = useState('')
     const [takeId, setTakeId] = useState('')
-    console.log(takeId)
     useImperativeHandle(ref, () => ({
         editExpense(expense) {
             setTakeId(expense.id);
@@ -86,8 +85,18 @@ const ExpenseTrackerForm = forwardRef((props, ref) => {
                 <label className={classes.label}>Description : </label>
                 <input type='text' className={classes.input} onChange={descriptionChangeHandler} value={enteredDescription} required></input>
                 <label className={classes.label}>Category : </label>
-                <input type='text' className={classes.input} onChange={categoryChangeHandler} value={enteredCategory} required></input>
-                <select></select>
+
+                <select type='text' onChange={categoryChangeHandler} value={enteredCategory} required>
+                    <option value='Select an option'>Select an option</option>
+                    <option value='Food'>Food</option>
+                    <option value='Petrol'>Petrol</option>
+                    <option value='Salary'>Salary</option>
+                    <option value='Shoppng'>Shopping</option>
+                    <option value='Repair'>Repair</option>
+                    <option value='Furniture'>Furniture</option>
+                    <option value='Fees'>Fees</option>
+                    <option value='Others'>Others</option>
+                </select>
                 <div>
                     <button className={classes.button}>Add Expense</button>
                 </div>

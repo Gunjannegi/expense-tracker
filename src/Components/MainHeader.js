@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import classes from './MainHeader.module.css';
+
 //import { useContext } from 'react';
 //import AuthContext from '../store/auth-context';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,21 +18,21 @@ const MainHeader = () => {
         localStorage.removeItem('stateOfPremiumButton');
     }
     return (
+        
         <header>
             <Navbar bg="dark" expand="sm" variant="dark">
                 <div>
-                    <Nav>
-                        <span>
-                            <NavLink to='/signup' className={classes.title}>Sign Up</NavLink>
+                    <span>
+                        <NavLink to='/signup' className={classes.title}>Sign Up</NavLink>
                         </span>
                         <span>
-                            {!isAuth && < NavLink to='/login' className={classes.title}>Login</NavLink>}
-                            {isAuth && < NavLink to='/login' className={classes.title} onClick={logoutUser}>Logout</NavLink>}
+                        {!isAuth && < NavLink to='/login' className={classes.title}>Login</NavLink>}
+                        {isAuth && < NavLink to='/login' className={classes.title} onClick={logoutUser}>Logout</NavLink>}
                         </span>
-                    </Nav>
-                </div>
+               </div>
             </Navbar>
-        </header>
+            </header>
+        
 
     )
 };

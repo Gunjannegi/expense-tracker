@@ -1,4 +1,4 @@
-import { Route, Redirect } from 'react-router-dom';
+import { Route, Redirect, Switch } from 'react-router-dom';
 import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/Login/Login";
 import MainHeader from "./Components/MainHeader";
@@ -17,13 +17,15 @@ function App() {
     const theme = useSelector(state => state.theme.theme)
       
     return (
+       
         <div style={{
             backgroundImage: theme === 'light' ? `url(${background})` : `url(${background2})`,
-            height:'800px'
+            height: '800px'
             
         }}>
             <MainHeader />
-            <div >
+                <div >
+            <Switch>
                 <Route path='/' exact>
                     {isAuth && <Redirect to='/welcome' />}
                     {!isAuth && <Redirect to='/signup' />}
@@ -45,9 +47,11 @@ function App() {
                 </Route>
                 <Route path='/expenselist'>
                     <ExpenseList />
-                </Route>
+                        </Route>
+                    </Switch>
             </div>
-        </div>
+            </div>
+       
     )
 }
 
