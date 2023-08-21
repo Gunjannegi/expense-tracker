@@ -4,6 +4,7 @@ import MainHeader from './MainHeader';
 import { Provider } from 'react-redux';
 import store from '../store/redux';
 import { BrowserRouter } from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
 
 describe('MainHeader component', () => {
     test('testing signup text', () => {
@@ -29,7 +30,7 @@ describe('MainHeader component', () => {
         }
     })
 
-    test('testing login text', () => {
+    test('testing login text if it is not clicked', () => {
         render(
             <Provider store={store}>
                 <BrowserRouter>
@@ -43,7 +44,5 @@ describe('MainHeader component', () => {
             throw error;
         }
     })
-
-   
 
 })
