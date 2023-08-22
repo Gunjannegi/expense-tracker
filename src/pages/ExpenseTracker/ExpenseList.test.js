@@ -89,4 +89,18 @@ describe('ExpenseList component', () => {
         }
     })
 
+    test('testing the async function which show items on screen', async () => {
+        window.fetch = jest.fn();
+        window.fetch.mockResolvedValueOnce({
+            json: async () => [{id: '1', price: 100, description:'Expense 1',category:'Category 1'}]
+        })
+        render(
+            <Provider store={store}>
+                    <BrowserRouter>
+                        <ExpenseList/>
+                    </BrowserRouter>
+                </Provider>)
+        const listItemElements = await screen.findAllByRole('row');
+        expect(listItemElements).not.toHaveLength(0);
+    })
 })

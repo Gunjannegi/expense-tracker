@@ -12,7 +12,6 @@ const ExpenseList = () => {
     const [expenseList, setExpenseList] = useState([]);
     const childRef = useRef()
     const dispatch = useDispatch();
-    console.log(expenseList)
     dispatch(expensesActions.itemList(expenseList))
     dispatch(expensesActions.totalExpenses(expenseList))
     const addingExpenses = (expense) => {
@@ -54,9 +53,7 @@ const ExpenseList = () => {
         }
     }
     const showOnScreen = async () => {
-        console.log('a')
         const email = (localStorage.getItem('email')).replace(/[^\w\s]/gi, '').trim();
-        console.log(email)
         try {
             const response = await fetch(`https://expensetracker-69456-default-rtdb.firebaseio.com/expenses${email}.json`)
             if (!response.ok) {
